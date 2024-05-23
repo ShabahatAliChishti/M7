@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Bts>
+
+<div class="text-center">
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Ratings</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Bts c in Model)
+            {
+            <tr>
+                <td>@c.BtsId</td>
+                <td>@c.Name</td>
+                <td>@c.Ratings</td>
+                <td>
+                    <a class="btn-primary" asp-controller="Bts" asp-action="Edit" asp-route-id="@c.BtsId">Edit</a>
+                </td>
+                <td>
+                    <a class="btn-primary" asp-controller="Bts" asp-action="Delete" asp-route-id="@c.BtsId">Delete</a>
+                </td>
+            </tr>
+
+            }
+        </tbody> 
+    </table>
+    <a asp-controller="Bts" asp-action="Add" class="btn-primary">Add</a>
+   
+</div>

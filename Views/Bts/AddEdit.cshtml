@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Bts
+<form asp-action="AddEdit" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-fpr="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ratings">Ratings</label>
+        <input asp-fpr="Ratings" class="form-control" />
+    </div>
+
+    <input type="hidden" asp-for="BtsId"/>
+    <button type="submit"class="btn-primary">@ViewBag.Title</button>
+
+</form>
